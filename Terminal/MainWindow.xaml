@@ -1,0 +1,50 @@
+﻿<Window x:Class="Terminal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Terminal"
+        xmlns:terminal="clr-namespace:Terminal.src"
+        mc:Ignorable="d"
+        Title="Terminal" Height="350" Width="525">
+	<Window.Resources>
+		<Style x:Key="SmartStyle" TargetType="{x:Type TextBlock}">
+			<Style.Triggers>
+				<DataTrigger Binding="{Binding Path=.UserGenerated}" Value="True">
+					<Setter Property="Text">
+						<Setter.Value>
+							<MultiBinding StringFormat='[{1:HH:mm:ss}]>> {0}'>
+								<Binding Path=".Str" />
+								<Binding Path=".TimeCreated" />
+							</MultiBinding>
+						</Setter.Value>
+						
+					</Setter>
+				</DataTrigger>
+				<DataTrigger Binding="{Binding Path=.UserGenerated}" Value="False">
+					<Setter Property="Text" Value="{Binding Path=.Str}" />
+				</DataTrigger>
+			</Style.Triggers>
+		</Style>
+	</Window.Resources>
+	
+	
+	<Grid Name="Overall">
+		<ScrollViewer Name="Viewer" Margin="0" Background="Black">
+			<StackPanel>
+				<ItemsControl ItemsSource="{Binding ConsoleOutput, Mode=OneWay}">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate DataType="{x:Type terminal:Message}">
+							<TextBlock Style="{StaticResource SmartStyle}" FontFamily="Consolas" Foreground="{Binding Path=.Color}" />
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text=">> " FontFamily="Consolas" Foreground="White"/>
+					<TextBox Text="{Binding ConsoleInput, Mode=TwoWay}" Background="Black" Foreground="White" FontFamily="Consolas" Name="InputBlock" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" />
+				</StackPanel>
+				
+			</StackPanel>
+		</ScrollViewer>
+	</Grid>
+</Window>
