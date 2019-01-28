@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar", "Calendar\Calendar.csproj", "{BF132E57-E55E-4BF2-AFC0-7D3057BCE430}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminal", "Terminal\Terminal.csproj", "{32102B59-2207-4019-AF93-D60A0902A8C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademicApplication", "AcademicApplication\AcademicApplication.csproj", "{FBCEBFCC-35E9-4639-A166-1079C00C8046}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{BF132E57-E55E-4BF2-AFC0-7D3057BCE430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF132E57-E55E-4BF2-AFC0-7D3057BCE430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF132E57-E55E-4BF2-AFC0-7D3057BCE430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32102B59-2207-4019-AF93-D60A0902A8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32102B59-2207-4019-AF93-D60A0902A8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32102B59-2207-4019-AF93-D60A0902A8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32102B59-2207-4019-AF93-D60A0902A8C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBCEBFCC-35E9-4639-A166-1079C00C8046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBCEBFCC-35E9-4639-A166-1079C00C8046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBCEBFCC-35E9-4639-A166-1079C00C8046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBCEBFCC-35E9-4639-A166-1079C00C8046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -6,7 +6,33 @@
         xmlns:local="clr-namespace:Calendar"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+	<DockPanel>
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="_File">
+				<MenuItem Header="_Exit" Click="exit_OnClick"/>
+			</MenuItem>
+			<MenuItem Header="_Tools">
+				<MenuItem Header="_Say Yes" />
+				<MenuItem Header="Show" Click="MenuItem_OnClick" >
+					<MenuItem.IsCheckable>True</MenuItem.IsCheckable>
+					<MenuItem.IsChecked>False</MenuItem.IsChecked>
+				</MenuItem>
+				<MenuItem Header="_Terminal" Click="terminal_OnClick"></MenuItem>
+			</MenuItem>
+		</Menu>
+		<Grid DockPanel.Dock="Bottom">
+			<TextBox HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72">
+				Hello World!
+			</TextBox>
+			<Button Click="ButtonBase_OnClick">
+				<Button.Content>
+					<WrapPanel>
+						<TextBlock Foreground="Blue">Multi</TextBlock>
+						<TextBlock Foreground="Red">Color</TextBlock>
+						<TextBox>Button</TextBox>
+					</WrapPanel>
+				</Button.Content>
+			</Button>
+		</Grid>
+    </DockPanel>
 </Window>
